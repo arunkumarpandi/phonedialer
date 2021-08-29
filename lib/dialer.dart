@@ -55,18 +55,17 @@ class _DialerState extends State<Dialer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Text('Running on: $_mobileNumber\n'),
-      // body: DialPad(
-      //     buttonTextColor: Colors.white,
-      //     enableDtmf: true,
-      //     outputMask: "(000) 000-0000",
-      //     backspaceButtonIconColor: Colors.red,
-      //     makeCall: (number) {
-      //       print(number);
-      //       _makePhoneCall('tel:$number');
-      //     })
-    );
+        backgroundColor: Colors.white,
+        // body: Text('Running on: $_mobileNumber\n'),
+        body: DialPad(
+            buttonTextColor: Colors.white,
+            enableDtmf: true,
+            outputMask: "(000) 000-0000",
+            backspaceButtonIconColor: Colors.red,
+            makeCall: (number) {
+              print(number);
+              _makePhoneCall('tel:$number');
+            }));
   }
 
   Future<void> _makePhoneCall(String url) async {
